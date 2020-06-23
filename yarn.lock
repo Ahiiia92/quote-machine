@@ -2982,6 +2982,11 @@ gaze@^1.0.0:
   dependencies:
     globule "^1.0.0"
 
+gender-api.com-client@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/gender-api.com-client/-/gender-api.com-client-1.0.14.tgz#356b8abbe7b61e3e64692c0c0d3639a065e02caf"
+  integrity sha512-mXeN9f6IPxaZFFFb5O4b7WHXAMKmfwBQCJI1KDm1HoFR/1bXgZHljoOuMCop42Qg62XVwVv74gUeH+regZUxTw==
+
 get-caller-file@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.3.tgz#f978fa4c90d1dfe7ff2d6beda2a515e713bdcf4a"
