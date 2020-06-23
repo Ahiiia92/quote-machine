@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Quote from './Quote';
+import quotes from '../../data/quotes';
 
 // $.ajax({
 //   type: "GET",
