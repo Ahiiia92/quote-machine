@@ -1,5 +1,8 @@
+@import "./components/cards";
+
 body {
   font-family: Helvetica;
+  color: #345995;
 }
 
 #root {
@@ -7,4 +10,5 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #F0FFF1;
 }
