@@ -5,8 +5,8 @@ class Quote extends Component {
     return (
     <div id="quote-text">
       <span><i className="fas fa-quote-left"></i></span>
-            Hello Marou! Keep up the good job!
-      <p id="author">- Yoda</p>
+            {this.props.text}
+      <p id="author">-- {this.props.author}</p>
     </div>
     );
   };
