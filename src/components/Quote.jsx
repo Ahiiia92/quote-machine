@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 
+// get our fontawesome imports
+import '../fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class Quote extends Component {
   render() {
     return (
-    <div id="quote-text">
-      {this.contacts}
-      <span><i className="fas fa-quote-left"></i></span>
-            {this.props.text}
-      <p id="author">-- {this.props.author}</p>
-    </div>
+      <div id="quote-text">
+        {this.contacts}
+        <span>
+          <FontAwesomeIcon
+            icon={['fa', 'quote-left']}
+            style={{
+              fontSize: '2em',
+              paddingRight: '5%'
+            }}
+          />
+        </span>
+        {this.props.text}
+        <p id="author">-- {this.props.author}</p>
+      </div>
     );
   };
 }
