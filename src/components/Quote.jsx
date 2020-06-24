@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class Quote extends Component {
   render() {
     return (
-      <div id="quote-text">
+      <div id="text">
         {this.contacts}
         <span>
           <FontAwesomeIcon
