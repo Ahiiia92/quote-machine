@@ -5,29 +5,26 @@ import '../fontawesome';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Quote from './Quote';
-import quotes from '../../data/quotes';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "You need a quote? Click on 'Next Quote'",
+      text: "You need a quote? Click on 'Next Quote'. Wanna share? Click on the icon ;)",
       author: "Yoda",
     }
   }
 
   nextQuote = () => {
-    console.log('We are in the nextQuote Function');
-    const url = `https://programming-quotes-api.herokuapp.com/quotes/random`;
+    const url = `https://type.fit/api/quotes`;
     console.log(url);
     fetch(url)
     .then(response => response.json())
     .then((data) => {
       this.setState({
-        text: data.en,
-        author: data.author
+        text: data[0].text,
+        author: data[0].author
       })
-      console.log(data);
     })
     .catch((error) => {
       this.setState({
@@ -37,10 +34,18 @@ class App extends Component {
     });
   }
 
-  handleClick = () => {
+  handleClick = (element) => {
+    const setBg = () => {
+      const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      document.getElementById('root').style.backgroundColor = "#" + randomColor;
+      document.getElementById('new-quote').style.backgroundColor = "#" + randomColor;
+      document.getElementById('tweet-quote').style.backgroundColor = "#" + randomColor;
+      document.body.style.color = "#" + randomColor;
+    };
     if (this.nextQuote) {
-      return this.nextQuote()
-    }
+      setBg();
+      return this.nextQuote();
+    };
   }
 
   render() {
@@ -52,7 +57,7 @@ class App extends Component {
             author={this.state.author}
           />
           <div className="btns">
-            <a href="#" id="tweet-quote">
+            <a href={`https://twitter.com/intent/tweet?text=${this.text}.+ ++author:+ +${this.author}`} id="tweet-quote">
               <FontAwesomeIcon
                 icon={['fab', 'twitter']}
                 style={{
