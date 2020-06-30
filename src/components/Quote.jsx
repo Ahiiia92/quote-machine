@@ -18,7 +18,7 @@ class Quote extends Component {
           />
         </span>
         {this.props.text}
-        <p id="author">-- {this.props.author}</p>
+        <p id="author">- {this.props.author}</p>
       </div>
     );
   };

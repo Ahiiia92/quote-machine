@@ -60,14 +60,9 @@ class App extends Component {
                 />
                 <div className="btns">
                   <a href={`https://twitter.com/intent/tweet?text=${this.text}.+ ++author:+ +${this.author}`} id="tweet-quote">
-                    <FontAwesomeIcon
-                      icon={['fab', 'twitter']}
-                      style={{
-                        fontSize: '1.5em'
-                      }}
-                    />
+                    <FontAwesomeIcon icon={['fab', 'twitter']}  style={{ fontSize: '1.5em'}}/>
                   </a>
-                  <a href="#" id="new-quote" onClick={this.handleClick}>NEW QUOTE</a>
+                  <a href="#" id="new-quote" onClick={this.handleClick}><FontAwesomeIcon icon={['fa', 'angle-double-right']} style={{ fontSize: '2em' }} /></a>
                 </div>
               </div>
               <div className="footer">Made by <a href="https://github.com/Ahiiia92" target="_blank" rel="noopener">Ahiiia92</a></div>
