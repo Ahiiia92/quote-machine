@@ -1,7 +1,14 @@
+#logo {
+  height: 40px;
+  margin: 0 45% 13%;
+}
+
 .card {
   background-color: #b9d6f2;
   box-shadow: 0px 70px 40px -32px rgba(0, 0, 0, 0.2);
+  // box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.8);
   border: none;
+  border-radius: 15px;
 }
 
 #quote-box {
@@ -10,7 +17,20 @@
   width: auto;
   padding: 40px 50px;
   display: table;
-  background-color: #fff;
+  overflow: hidden;
+  z-index: 0;
+  background-color: white;
+  border-radius: 15px 15px 0 0;
+
+  img {
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    // background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.55));
+    z-index: -1;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1));
+  }
 }
 
 #text {
@@ -20,6 +40,7 @@
   clear: both;
   font-weight: 500;
   font-size: 1.75em;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 .btns {
@@ -68,4 +89,14 @@
   padding-top: 20px;
   font-size: 0.5em;
   text-align: right;
+}
+
+@media all and (max-width: 520px) and (min-width: 320px) {
+  #text {
+    font-size: 1em;
+  }
+
+  #author {
+    font-size: 0.75em;
+  }
 }

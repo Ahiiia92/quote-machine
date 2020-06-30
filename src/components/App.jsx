@@ -51,9 +51,11 @@ class App extends Component {
     return (
       <div className = "container" >
         <div className="row justify-content-center">
-          <div className="col-12 col-md-8 col-lg-6">
+          <div className="col-12 col-md-8 col-lg-6" style={{ boxShadow: '0px 70px 40px -32px rgba(0, 0, 0, 0.2)' }}>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Circle-icons-quote.svg/512px-Circle-icons-quote.svg.png" alt="logo" id="logo"/>
             <div className="card">
               <div id="quote-box" className="w-100">
+                <img src="https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="background image" />
                 <Quote
                   text={this.state.text}
                   author={this.state.author}
