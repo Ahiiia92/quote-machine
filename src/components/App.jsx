@@ -16,14 +16,13 @@ class App extends Component {
   }
 
   nextQuote = () => {
-    const url = `https://type.fit/api/quotes`;
-    console.log(url);
+    const url = `https://programming-quotes-api.herokuapp.com/quotes/random`;
     fetch(url)
     .then(response => response.json())
     .then((data) => {
       this.setState({
-        text: data[0].text,
-        author: data[0].author
+        text: data.en,
+        author: data.author
       })
     })
     .catch((error) => {

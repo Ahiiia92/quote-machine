@@ -7,6 +7,6 @@ Simple react starter with the following config:
 - Random quote generator
 - Random color on Click
 - Twitter share button
-- API from 'https://type.fit/api/quotes'
+- API from 'https://programming-quotes-api.herokuapp.com/quotes/random'
 
 Live: .
