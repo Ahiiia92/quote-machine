@@ -1,8 +1,11 @@
+// External Libraries
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 // Internal Libraries
 @import "./components/cards";
 
 body {
-  font-family: Helvetica;
+  font-family: Roboto, sans-serif;
   color: #345995;
 }
 
