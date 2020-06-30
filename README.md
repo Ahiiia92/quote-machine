@@ -9,4 +9,4 @@ Simple react starter with the following config:
 - Twitter share button
 - API from 'https://programming-quotes-api.herokuapp.com/quotes/random'
 
-Live: .
+Live: https://ahiiia92.github.io/quote-machine/
