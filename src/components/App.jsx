@@ -49,25 +49,31 @@ class App extends Component {
 
   render() {
     return (
-      <div className="card">
-        <div id="quote-box">
-          <Quote
-            text={this.state.text}
-            author={this.state.author}
-          />
-          <div className="btns">
-            <a href={`https://twitter.com/intent/tweet?text=${this.text}.+ ++author:+ +${this.author}`} id="tweet-quote">
-              <FontAwesomeIcon
-                icon={['fab', 'twitter']}
-                style={{
-                  fontSize: '1.5em'
-                }}
-              />
-            </a>
-            <a href="#" id="new-quote" onClick={this.handleClick}>NEW QUOTE</a>
+      <div className = "container" >
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-8 col-lg-6">
+            <div className="card">
+              <div id="quote-box" className="w-100">
+                <Quote
+                  text={this.state.text}
+                  author={this.state.author}
+                />
+                <div className="btns">
+                  <a href={`https://twitter.com/intent/tweet?text=${this.text}.+ ++author:+ +${this.author}`} id="tweet-quote">
+                    <FontAwesomeIcon
+                      icon={['fab', 'twitter']}
+                      style={{
+                        fontSize: '1.5em'
+                      }}
+                    />
+                  </a>
+                  <a href="#" id="new-quote" onClick={this.handleClick}>NEW QUOTE</a>
+                </div>
+              </div>
+              <div className="footer">Made by <a href="https://github.com/Ahiiia92" target="_blank" rel="noopener">Ahiiia92</a></div>
+            </div>
           </div>
         </div>
-        <div className="footer">Made by <a href="https://github.com/Ahiiia92" target="_blank" rel="noopener">Ahiiia92</a></div>
       </div>
     );
   };

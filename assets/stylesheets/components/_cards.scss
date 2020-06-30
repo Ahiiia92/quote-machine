@@ -1,13 +1,13 @@
 .card {
   background-color: #b9d6f2;
-  position: relative;
-  z-index: 2;
+  // position: relative;
+  // z-index: 2;
 }
 
 #quote-box {
   border-radius: 3px;
   position: relative;
-  width: 450px;
+  width: auto;
   padding: 40px 50px;
   display: table;
   background-color: #fff;
@@ -15,7 +15,7 @@
 
 #text {
   text-align: center;
-  width: 450px;
+  width: auto;
   height: auto;
   clear: both;
   font-weight: 500;
@@ -23,8 +23,9 @@
 }
 
 .btns {
+  display: flex;
+  justify-content: space-between;
   #new-quote {
-    float: right;
     height: 30px;
     border: none;
     border-radius: 3px;
@@ -40,7 +41,6 @@
   }
 
   #tweet-quote {
-    float: left;
     text-align: center;
     font-size: 1.2em;
     margin-right: 5px;
@@ -61,7 +61,7 @@
 }
 
 #author {
-  width: 450px;
+  width: auto;
   height: auto;
   clear: both;
   padding-top: 20px;

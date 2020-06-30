@@ -7,8 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class Quote extends Component {
   render() {
     return (
-      <div id="text">
-        {this.contacts}
+      <div id="text" className="">
         <span>
           <FontAwesomeIcon
             icon={['fa', 'quote-left']}
