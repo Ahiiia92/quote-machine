@@ -11,16 +11,30 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "YALLLLLLLLAH!",
+      text: "You need a quote? Click on 'Next Quote'",
       author: "Yoda",
     }
   }
 
   nextQuote = () => {
-    this.setState({
-      text: "Next Quote",
-      author: "Moi"
+    console.log('We are in the nextQuote Function');
+    const url = `https://programming-quotes-api.herokuapp.com/quotes/random`;
+    console.log(url);
+    fetch(url)
+    .then(response => response.json())
+    .then((data) => {
+      this.setState({
+        text: data.en,
+        author: data.author
+      })
+      console.log(data);
     })
+    .catch((error) => {
+      this.setState({
+        text: "Oups... Seems we hava an issue",
+        author: "Marou"
+      })
+    });
   }
 
   handleClick = () => {
@@ -49,7 +63,7 @@ class App extends Component {
             <a href="#" id="new-quote" onClick={this.handleClick}>NEW QUOTE</a>
           </div>
         </div>
-        <div className="footer">Licensed by Me, Myself and I</div>
+        <div className="footer">Made by <a href="https://github.com/Ahiiia92" target="_blank" rel="noopener">Ahiiia92</a></div>
       </div>
     );
   };
