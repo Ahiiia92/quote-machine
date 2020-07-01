@@ -10,8 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "You need a quote? Click on 'Next Quote'. Wanna share? Click on the icon ;)",
-      author: "Yoda",
+      text: "Welcome beautiful Sunshine! Click on 'Next Quote'. Wanna share? Click on the icon ;)",
+      author: "Yours"
     }
   }
 
@@ -33,7 +33,33 @@ class App extends Component {
     });
   }
 
-  handleClick = (element) => {
+  // nextSong = () => {
+  //   console.log("We're in next Song Function");
+  //   const url = `https://api.spotify.com/v1/tracks/`;
+  //   console.log(url);
+  //   fetch(url, {
+  //     method: "GET",
+  //     headers: {
+  //       Authorization: `Bearer ***REMOVED***`
+  //     }
+  //   })
+  //   .then(response => response.json())
+  //   .then((result) => {
+  //     this.setState({
+  //       song: result[0]
+  //     })
+  //     console.log(result);
+  //   })
+  //   .catch((error) => {
+  //     this.setState({
+  //       text: "Oups... Seems we hava an issue",
+  //       author: "Marou"
+  //     })
+  //   });
+  // }
+
+  handleClick = () => {
+    console.log("we're in the handleClick function");
     const setBg = () => {
       const randomColor = Math.floor(Math.random() * 16777215).toString(16);
       document.getElementById('root').style.backgroundColor = "#" + randomColor;
@@ -43,7 +69,9 @@ class App extends Component {
     };
     if (this.nextQuote) {
       setBg();
-      return this.nextQuote();
+      return (
+        this.nextQuote()
+        );
     };
   }
 
