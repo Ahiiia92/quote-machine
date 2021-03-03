@@ -16,7 +16,6 @@ class App extends Component {
   }
 
   nextQuote = () => {
-    // const url = `http://quotes.rest/qod.json?category=inspire`;
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = () => {
       if (this.readyState == 4 && this.status == 200) {
@@ -25,8 +24,6 @@ class App extends Component {
       }
     };
     xhttp.open("GET", "https://type.fit/api/quotes", true);
-    console.log(url);
-    // xhttp.setRequestHeader("X-Theysaidso-Api-Secret", "YOUR API HERE");
     xhttp.setRequestHeader("Access-Control-Allow-Origin" , "*");
     xhttp.setRequestHeader("Access-Control-Expose-Headers", "Access-Control-Allow-Origin");
     xhttp.setRequestHeader("Access-Control-Allow-Methods", "GET");
@@ -51,31 +48,6 @@ class App extends Component {
     });
   }
 
-  // nextSong = () => {
-  //   console.log("We're in next Song Function");
-  //   const url = `https://api.spotify.com/v1/tracks/`;
-  //   console.log(url);
-  //   fetch(url, {
-  //     method: "GET",
-  //     headers: {
-  //       Authorization: `Bearer 1631f68e18754d02b1e970657c598bda`
-  //     }
-  //   })
-  //   .then(response => response.json())
-  //   .then((result) => {
-  //     this.setState({
-  //       song: result[0]
-  //     })
-  //     console.log(result);
-  //   })
-  //   .catch((error) => {
-  //     this.setState({
-  //       text: "Oups... Seems we hava an issue",
-  //       author: "Marou"
-  //     })
-  //   });
-  // }
-
   handleClick = () => {
     const setBg = () => {
       const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -89,7 +61,7 @@ class App extends Component {
       return (
         this.nextQuote()
         );
-    };
+    }
   }
 
   render() {
