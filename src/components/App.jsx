@@ -16,18 +16,38 @@ class App extends Component {
   }
 
   nextQuote = () => {
-    const url = `https://programming-quotes-api.herokuapp.com/quotes/random`;
+    // const url = `http://quotes.rest/qod.json?category=inspire`;
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = () => {
+      if (this.readyState == 4 && this.status == 200) {
+        // Access the result here
+        alert(this.responseText);
+      }
+    };
+    xhttp.open("GET", "http://quotes.rest/qod.json", true);
+    console.log(url);
+    // xhttp.setRequestHeader("X-Theysaidso-Api-Secret", "YOUR API HERE");
+    xhttp.setRequestHeader("Access-Control-Allow-Origin" , "*");
+    xhttp.setRequestHeader("Access-Control-Expose-Headers", "Access-Control-Allow-Origin");
+    xhttp.setRequestHeader("Access-Control-Allow-Methods", "GET");
+    xhttp.setRequestHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin-Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin, X-Access-Token, XKey, Authorization");
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
+
+    const url = "http://quotes.rest/qod.json";
     fetch(url)
     .then(response => response.json())
     .then((data) => {
+      console.log(data);
+      console.log(data.contents.quotes[0].quote);
       this.setState({
-        text: data.en,
-        author: data.author
+        text: data.contents.quotes[0].quote,
+        author: data.contents.quotes[0].author
       })
     })
     .catch((error) => {
       this.setState({
-        text: "Oups... Seems we hava an issue",
+        text: "Oups... Seems we have an issue",
         author: "Marou"
       })
     });
@@ -89,7 +109,7 @@ class App extends Component {
                   author={this.state.author}
                 />
                 <div className="btns">
-                  <a href={`https://twitter.com/intent/tweet?text=${this.text}.+ ++author:+ +${this.author}`} id="tweet-quote">
+                  <a href={`https://twitter.com/intent/tweet?text=Quote of The Day: "${this.state.text}"+ – +${this.state.author}`} id="tweet-quote">
                     <FontAwesomeIcon icon={['fab', 'twitter']}  style={{ fontSize: '1.5em'}}/>
                   </a>
                   <a href="#" id="new-quote" onClick={this.handleClick}><FontAwesomeIcon icon={['fa', 'angle-double-right']} style={{ fontSize: '2em' }} /></a>
