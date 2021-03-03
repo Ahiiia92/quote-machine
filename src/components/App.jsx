@@ -24,7 +24,7 @@ class App extends Component {
         alert(this.responseText);
       }
     };
-    xhttp.open("GET", "http://quotes.rest/qod.json", true);
+    xhttp.open("GET", "https://type.fit/api/quotes", true);
     console.log(url);
     // xhttp.setRequestHeader("X-Theysaidso-Api-Secret", "YOUR API HERE");
     xhttp.setRequestHeader("Access-Control-Allow-Origin" , "*");
@@ -34,15 +34,13 @@ class App extends Component {
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send();
 
-    const url = "http://quotes.rest/qod.json";
+    const url = "https://type.fit/api/quotes";
     fetch(url)
     .then(response => response.json())
     .then((data) => {
-      console.log(data);
-      console.log(data.contents.quotes[0].quote);
       this.setState({
-        text: data.contents.quotes[0].quote,
-        author: data.contents.quotes[0].author
+        text: data[Math.round(Math.random() * 1644)].text,
+        author: data[Math.round(Math.random() * 1644)].author
       })
     })
     .catch((error) => {
@@ -79,7 +77,6 @@ class App extends Component {
   // }
 
   handleClick = () => {
-    console.log("we're in the handleClick function");
     const setBg = () => {
       const randomColor = Math.floor(Math.random() * 16777215).toString(16);
       document.getElementById('root').style.backgroundColor = "#" + randomColor;
